@@ -60,7 +60,7 @@ Abra o arquivo `projetoIA_v2.ipynb` no navegador.
 ## 📈 Modelos Utilizados
 Os seguintes algoritmos foram testados e avaliados:
 - Regressão Logística
-- K-Nearest Neighbors (KNN)
+- Rede Neural (MLP)
 - Random Forest
 - Support Vector Machine (SVM)
 
@@ -71,7 +71,7 @@ As métricas usadas para avaliação dos modelos incluem:
 - **F1-Score**
 
 ## 📊 Resultados
-Os resultados finais mostraram que o modelo *[inserir modelo com melhor desempenho]* obteve a melhor performance com uma acurácia de *[inserir valor]*.
+Os resultados finais mostraram que o modelo *[Rede Neural (MLP)]* obteve a melhor performance com uma acurácia de *[89,36%]*.
 
 ## 📌 Próximos Passos
 - Melhorar a otimização de hiperparâmetros.
@@ -80,9 +80,6 @@ Os resultados finais mostraram que o modelo *[inserir modelo com melhor desempen
 
 ## 🤝 Contribuição
 Fique à vontade para abrir *issues* ou enviar *pull requests* para melhorias.
-
-## 📄 Licença
-Este projeto está sob a licença MIT. Consulte o arquivo `LICENSE` para mais detalhes.
 
 ---
 
