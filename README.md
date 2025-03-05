@@ -1,87 +1,175 @@
-# Projeto de IA: Predição de Doenças Cardíacas
+# Heart Disease Prediction
 
-## 📊 Sobre o Projeto
+Este repositório contém um projeto de machine learning para prever a ocorrência de doenças cardíacas com base em um conjunto de dados fornecido. O objetivo é criar um modelo preditivo que possa auxiliar na identificação precoce de problemas cardíacos.
 
-Este projeto utiliza algoritmos de Inteligência Artificial para prever a presença de doenças cardíacas com base em um conjunto de dados contendo variáveis clínicas dos pacientes. A análise é realizada por meio de modelos de aprendizado de máquina que classificam se um indivíduo possui ou não uma condição cardíaca.
+## Conjunto de Dados
 
-## 📁 Estrutura do Projeto
-- **`projetoIA_v2.ipynb`**: Notebook principal contendo a análise exploratória de dados, preparação do conjunto de dados e o treinamento dos modelos de IA.
-- **`data/`**: Diretório (se existente) onde estão armazenados os dados brutos e processados.
-- **`images/`**: Contém gráficos gerados durante a análise exploratória.
-- **`models/`**: Modelos treinados salvos, caso tenha sido configurado para exportar.
+Os dados utilizados neste projeto foram obtidos a partir de uma planilha disponível no Google Sheets. O link para exportação dos dados em formato CSV é:
 
-## 📚 Conjunto de Dados
-O conjunto de dados utilizado é relacionado a doenças cardíacas, contendo as seguintes variáveis:
+[Link para o conjunto de dados](#)
 
-| Variável  | Descrição                                     |
-|-----------|-----------------------------------------------|
-| age       | Idade do paciente em anos                     |
-| sex       | Gênero (0 = masculino, 1 = feminino)          |
-| cp        | Tipo de dor no peito (0 a 3)                  |
-| trestbps  | Pressão arterial de repouso (mmHg)            |
-| chol      | Colesterol sérico (mg/dl)                     |
-| fbs       | Açúcar no sangue em jejum (>120mg/dl, 1 = sim, 0 = não) |
-| restecg   | Resultados do ECG em repouso (0 a 2)          |
-| thalach   | Frequência cardíaca máxima atingida           |
-| exang     | Angina induzida por exercício (1 = sim, 0 = não) |
-| oldpeak   | Depressão ST induzida por exercício           |
-| slope     | Inclinação do segmento ST (0 a 2)             |
-| ca        | Número de vasos principais (0 a 4)            |
-| thal      | Resultado do teste de estresse (0 a 3)        |
-| target    | Doença cardíaca (1 = presença, 0 = ausência)  |
+## Descrição das Variáveis
 
-## 🚀 Como Rodar o Projeto
+O conjunto de dados contém as seguintes variáveis:
 
-### 1. Clone o repositório
+- **Idade:** Idade do paciente.
+- **Sexo:** Sexo do paciente (Masculino/Feminino).
+- **Tipo de dor no peito:** Tipo de dor no peito relatada (1 a 4).
+- **Pressão arterial em repouso:** Pressão arterial em repouso (em mm Hg).
+- **Colesterol:** Nível de colesterol sérico (em mg/dl).
+- **Açúcar no sangue em jejum:** Nível de açúcar no sangue em jejum (> 120 mg/dl = 1; < 120 mg/dl = 0).
+- **Eletrocardiograma em repouso:** Resultados do eletrocardiograma em repouso (0 a 2).
+- **Frequência cardíaca máxima:** Frequência cardíaca máxima alcançada.
+- **Angina induzida por exercício:** Presença de angina induzida por exercício (1 = sim; 0 = não).
+- **Depressão de ST:** Depressão de ST induzida por exercício em relação ao repouso.
+- **Inclinação do segmento ST:** Inclinação do segmento ST no pico do exercício (1 a 3).
+- **Número de vasos principais:** Número de vasos principais coloridos por fluoroscopia (0 a 3).
+- **Talassemia:** Resultado da talassemia (3 = normal; 6 = defeito fixo; 7 = defeito reversível).
+- **Doença cardíaca:** Presença de doença cardíaca (1 = sim; 0 = não).
+
+## Metodologia
+
+### Pré-processamento dos dados:
+
+- Tratamento de valores ausentes.
+- Normalização ou padronização das variáveis.
+- Codificação de variáveis categóricas.
+
+### Análise exploratória de dados (EDA):
+
+- Visualização de distribuições e correlações.
+- Identificação de outliers.
+
+### Modelagem:
+
+- Divisão dos dados em conjuntos de treino e teste.
+- Aplicação de algoritmos de machine learning (ex: Regressão Logística, Random Forest, XGBoost).
+- Avaliação dos modelos com métricas como acurácia, precisão, recall e F1-score.
+
+### Seleção do modelo:
+
+- Escolha do modelo com melhor desempenho.
+- Ajuste de hiperparâmetros com validação cruzada.
+
+### Deploy (opcional):
+
+- Implementação do modelo em produção (ex: API com Flask ou FastAPI).
+
+## Como Executar o Projeto
+
+Clone este repositório:
+
 ```bash
 git clone https://github.com/thiagoeu/HeartDisease.git
-cd HeartDisease
 ```
 
-### 2. Crie um ambiente virtual
-```bash
-python -m venv venv
-source venv/bin/activate  # Linux/macOS
-venv\Scripts\activate     # Windows
-```
+Instale as dependências necessárias:
 
-### 3. Instale as dependências
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Execute o Jupyter Notebook
+Execute o notebook ou script principal:
+
 ```bash
-jupyter notebook
+jupyter notebook HeartDisease.ipynb
 ```
 
-Abra o arquivo `projetoIA_v2.ipynb` no navegador.
+## Resultados dos Modelos
 
-## 📈 Modelos Utilizados
-Os seguintes algoritmos foram testados e avaliados:
-- Regressão Logística
-- Rede Neural (MLP)
-- Random Forest
-- Support Vector Machine (SVM)
+### 1. Regressão Logística
 
-As métricas usadas para avaliação dos modelos incluem:
-- **Acurácia**
-- **Precisão**
-- **Recall**
-- **F1-Score**
+**Acurácia no Treino:** 87.77%
 
-## 📊 Resultados
-Os resultados finais mostraram que o modelo *[Rede Neural (MLP)]* obteve a melhor performance com uma acurácia de *[89,36%]*.
+**Acurácia no Teste:** 82.98%
 
-## 📌 Próximos Passos
-- Melhorar a otimização de hiperparâmetros.
-- Implementar técnicas de balanceamento de dados.
-- Explorar redes neurais para comparação.
+Matriz de Confusão:
 
-## 🤝 Contribuição
-Fique à vontade para abrir *issues* ou enviar *pull requests* para melhorias.
+```
+[[15  5]
+ [ 3 24]]
+```
 
----
+### 2. SVM (Support Vector Machine)
 
-💡 *Desenvolvido por [Thiago](https://github.com/thiagoeu)*
+**Acurácia no Treino:** 92.02%
+
+**Acurácia no Teste:** 85.11%
+
+Matriz de Confusão:
+
+```
+[[15  5]
+ [ 2 25]]
+```
+
+### 3. Random Forest
+
+**Acurácia no Treino:** 100.00%
+
+**Acurácia no Teste:** 82.98%
+
+Matriz de Confusão:
+
+```
+[[15  5]
+ [ 3 24]]
+```
+
+### 4. Árvore de Decisão
+
+**Acurácia no Treino:** 100.00%
+
+**Acurácia no Teste:** 82.98%
+
+Matriz de Confusão:
+
+```
+[[15  5]
+ [ 3 24]]
+```
+
+### 5. Rede Neural (MLP)
+
+**Acurácia no Treino:** 100.00%
+
+**Acurácia no Teste:** 89.36%
+
+Matriz de Confusão:
+
+```
+[[16  4]
+ [ 1 26]]
+```
+
+## Análise dos Resultados
+
+O modelo de **Rede Neural (MLP)** obteve a maior acurácia no conjunto de teste (89.36%), seguido pelo **SVM (85.11%)**.
+
+Os modelos **Regressão Logística, Random Forest e Árvore de Decisão** tiveram desempenho semelhante, com acurácia de teste em torno de **82.98%**.
+
+A Rede Neural também apresentou o melhor equilíbrio entre **precisão** e **recall**, especialmente para a classe 1 (doença cardíaca presente).
+
+## Contribuições
+
+Contribuições são bem-vindas! Siga os passos abaixo:
+
+1. Faça um fork do repositório.
+2. Crie uma branch para sua feature:
+   ```bash
+   git checkout -b feature/nova-feature
+   ```
+3. Commit suas mudanças:
+   ```bash
+   git commit -m 'Adiciona nova feature'
+   ```
+4. Push para a branch:
+   ```bash
+   git push origin feature/nova-feature
+   ```
+5. Abra um Pull Request.
+
+## Licença
+
+Este projeto está licenciado sob a licença MIT. Consulte o arquivo LICENSE para mais detalhes.
 
